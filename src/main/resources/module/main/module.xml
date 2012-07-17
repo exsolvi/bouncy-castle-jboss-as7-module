@@ -1,0 +1,10 @@
+<module xmlns="urn:jboss:module:1.0" name="org.bouncycastle">
+    <resources>
+        <resource-root path="bcpkix-jdk15on-1.47.jar"/>
+        <resource-root path="bcprov-jdk15on-1.47.jar"/>
+    </resources>
+    
+    <dependencies>
+        <module name="javax.api"/>
+    </dependencies>
+</module>
