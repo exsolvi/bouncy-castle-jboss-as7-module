@@ -130,7 +130,7 @@
                     <workingDirectory>target/dependency</workingDirectory>
                     <arguments>
                         <argument>-c</argument>
-                        <argument>for a in *.jar; do jar -tf $a | cut -d '.' -f 1 > $a.index; done</argument>
+                        <argument>for a in *.jar; do jar -tf $a | egrep '/$' | sort | sed 's/\/$//g' > $a.index; done</argument>
                     </arguments>
                 </configuration>
             </plugin>
@@ -183,7 +183,27 @@
     <dependencies>
         <dependency>
             <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpg-jdk15on</artifactId>
+            <version>1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcmail-jdk15on</artifactId>
+            <version>1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-ext-jdk15on</artifactId>
             <version>1.47</version>
         </dependency>
     </dependencies>
